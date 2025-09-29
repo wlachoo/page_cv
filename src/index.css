@@ -8,3 +8,16 @@
   font-family: "Poppins", sans-serif;
   color-scheme: dark;
 }
+
+/* Variables CSS personalizadas para el CV */
+:root {
+  --primary-color: #3B82F6;      /* Azul profesional */
+  --primary-dark: #1E40AF;       /* Azul oscuro */
+  --secondary-color: #10B981;    /* Verde corporativo */
+  --accent-color: #8B5CF6;       /* Púrpura moderno */
+  --text-primary: #F8FAFC;       /* Texto principal */
+  --text-secondary: #94A3B8;     /* Texto secundario */
+  --bg-primary: #0F172A;         /* Fondo principal */
+  --bg-secondary: #1E293B;       /* Fondo secundario */
+  --border-color: #334155;       /* Color de bordes */
+}

@@ -1,32 +1,130 @@
-import { features } from "../constants";
+import { skills } from "../constants";
+import { 
+  Code, 
+  Server, 
+  Database, 
+  Wrench, 
+  Users, 
+  Globe,
+  // Frontend icons
+  FileText,
+  Palette,
+  // Backend icons
+  Terminal,
+  Zap,
+  // Database icons
+  HardDrive,
+  // Tool icons
+  GitBranch,
+  Cloud,
+  // Methodology icons
+  Target,
+  // Language icons
+  MessageCircle
+} from "lucide-react";
+
+// Función para obtener el icono correspondiente a cada tecnología
+const getTechIcon = (tech) => {
+  const iconMap = {
+    // Frontend
+    'React': <Code className="w-4 h-4" />,
+    'Vue.js': <Code className="w-4 h-4" />,
+    'JavaScript': <FileText className="w-4 h-4" />,
+    'TypeScript': <FileText className="w-4 h-4" />,
+    'HTML5': <FileText className="w-4 h-4" />,
+    'CSS3': <Palette className="w-4 h-4" />,
+    'Tailwind CSS': <Palette className="w-4 h-4" />,
+    
+    // Backend
+    'Node.js': <Server className="w-4 h-4" />,
+    'Python': <Terminal className="w-4 h-4" />,
+    'Express.js': <Server className="w-4 h-4" />,
+    'Django': <Server className="w-4 h-4" />,
+    'REST APIs': <Zap className="w-4 h-4" />,
+    'GraphQL': <Zap className="w-4 h-4" />,
+    
+    // Databases
+    'MongoDB': <Database className="w-4 h-4" />,
+    'PostgreSQL': <Database className="w-4 h-4" />,
+    'MySQL': <Database className="w-4 h-4" />,
+    'Redis': <HardDrive className="w-4 h-4" />,
+    
+    // Tools
+    'Git': <GitBranch className="w-4 h-4" />,
+    'Docker': <Cloud className="w-4 h-4" />,
+    'AWS': <Cloud className="w-4 h-4" />,
+    'Vercel': <Cloud className="w-4 h-4" />,
+    'Figma': <Palette className="w-4 h-4" />,
+    'VS Code': <Code className="w-4 h-4" />,
+    
+    // Methodologies
+    'Agile': <Target className="w-4 h-4" />,
+    'Scrum': <Users className="w-4 h-4" />,
+    'TDD': <Target className="w-4 h-4" />,
+    'CI/CD': <Zap className="w-4 h-4" />,
+    'DevOps': <Wrench className="w-4 h-4" />,
+    
+    // Languages
+    'Español (Nativo)': <MessageCircle className="w-4 h-4" />,
+    'Inglés (Avanzado)': <Globe className="w-4 h-4" />,
+    'Portugués (Intermedio)': <MessageCircle className="w-4 h-4" />
+  };
+  
+  return iconMap[tech] || <Code className="w-4 h-4" />;
+};
+
+// Función para obtener el icono de la categoría
+const getCategoryIcon = (category) => {
+  const categoryIcons = {
+    'Frontend': <Code className="w-6 h-6" />,
+    'Backend': <Server className="w-6 h-6" />,
+    'Bases de Datos': <Database className="w-6 h-6" />,
+    'Herramientas': <Wrench className="w-6 h-6" />,
+    'Metodologías': <Users className="w-6 h-6" />,
+    'Idiomas': <Globe className="w-6 h-6" />
+  };
+  
+  return categoryIcons[category] || <Code className="w-6 h-6" />;
+};
 
 const FeatureSection = () => {
   return (
-    <div className="relative mt-20 border-b border-neutral-800 min-h-[800px]">
+    <div id="skills" className="relative mt-20 border-b border-slate-700 min-h-[800px]">
       <div className="text-center">
-        <span className="bg-neutral-900 text-orange-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
-          Feature
+        <span className="bg-slate-900 text-blue-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
+          Habilidades
         </span>
         <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-20 tracking-wide">
-          Easily build{" "}
-          <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
-            your code
+          Mis{" "}
+          <span className="bg-gradient-to-r from-blue-500 to-blue-700 text-transparent bg-clip-text">
+            Habilidades
           </span>
         </h2>
+        <p className="mt-6 text-lg text-slate-400 max-w-3xl mx-auto">
+          Tecnologías y herramientas que domino para crear soluciones innovadoras
+        </p>
       </div>
-      <div className="flex flex-wrap mt-10 lg:mt-20">
-        {features.map((feature, index) => (
-          <div key={index} className="w-full sm:w-1/2 lg:w-1/3">
-            <div className="flex">
-              <div className="flex mx-6 h-10 w-10 p-2 bg-neutral-900 text-orange-700 justify-center items-center rounded-full">
-                {feature.icon}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+        {skills.map((skillCategory, index) => (
+          <div key={index} className="bg-slate-800/50 rounded-lg p-6 border border-slate-700 hover:border-blue-500 transition-colors duration-300">
+            <div className="flex items-center justify-center mb-4">
+              <div className="text-blue-400 mr-2">
+                {getCategoryIcon(skillCategory.category)}
               </div>
-              <div>
-                <h5 className="mt-1 mb-6 text-xl">{feature.text}</h5>
-                <p className="text-md p-2 mb-20 text-neutral-500">
-                  {feature.description}
-                </p>
-              </div>
+              <h3 className="text-xl font-semibold text-blue-400">
+                {skillCategory.category}
+              </h3>
+            </div>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {skillCategory.technologies.map((tech, techIndex) => (
+                <span 
+                  key={techIndex}
+                  className="bg-slate-700 text-slate-300 px-3 py-2 rounded-full text-sm hover:bg-blue-600 hover:text-white transition-colors duration-200 flex items-center gap-1"
+                >
+                  {getTechIcon(tech)}
+                  {tech}
+                </span>
+              ))}
             </div>
           </div>
         ))}
