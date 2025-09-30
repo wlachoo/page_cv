@@ -1,12 +1,11 @@
 // Datos personales del CV
 export const personalInfo = {
-  name: "Wladimir Lemus",
-  title: "Desarrollador Full Stack",
+  name: "Daviana Martinez",
+  title: "Contadora",
   email: "w.edgardo22@gmail.com",
-  phone: "+5804121852346",
   location: "Porlamar, Nueva Esparta, Venezuela",
   linkedin: "https://linkedin.com/in/tu-perfil",
-  github: "https://github.com/wlachoo",
+  github: "https:s//github.com/wlachoo",
   portfolio: "https://tu-portfolio.com",
   summary: "Desarrollador apasionado con experiencia en tecnologías modernas. Especializado en crear soluciones web innovadoras y escalables."
 };
@@ -14,7 +13,7 @@ export const personalInfo = {
 // Navegación del CV
 export const navItems = [
   { label: "Sobre Mí", href: "#about" },
-  { label: "Habilidades", href: "#skills" },
+  { label: "Mis Proyectos", href: "#skills" },
   { label: "Experiencia", href: "#experience" },
   { label: "Proyectos", href: "#projects" },
   { label: "Educación", href: "#education" },
@@ -24,28 +23,16 @@ export const navItems = [
 // Habilidades técnicas
 export const skills = [
   {
-    category: "Frontend",
+    category: "Transforma tu vida",
     technologies: ["React", "Vue.js", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS"]
   },
   {
-    category: "Backend", 
+    category: "Viaja conmigo", 
     technologies: ["Node.js", "Python", "Express.js", "Django", "REST APIs", "GraphQL"]
   },
   {
-    category: "Bases de Datos",
+    category: "Expande tu mente",
     technologies: ["MongoDB", "PostgreSQL", "MySQL", "Redis"]
-  },
-  {
-    category: "Herramientas",
-    technologies: ["Git", "Docker", "AWS", "Vercel", "Figma", "VS Code"]
-  },
-  {
-    category: "Metodologías",
-    technologies: ["Agile", "Scrum", "TDD", "CI/CD", "DevOps"]
-  },
-  {
-    category: "Idiomas",
-    technologies: ["Español (Nativo)", "Inglés (Avanzado)", "Portugués (Intermedio)"]
   }
 ];
 
@@ -199,7 +186,6 @@ export const footerLinks = {
     { name: "Email", url: "mailto:tu.email@ejemplo.com", icon: "mail" }
   ],
   quickLinks: [
-    { name: "Descargar CV", url: "#download" },
     { name: "Portfolio", url: "https://tu-portfolio.com" },
     { name: "Blog", url: "https://tu-blog.com" },
     { name: "Contacto", url: "#contact" }

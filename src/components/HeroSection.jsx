@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Github, ExternalLink } from "lucide-react";
+import { Mail, MapPin, Linkedin, Github, ExternalLink } from "lucide-react";
 import { personalInfo } from "../constants";
 import profilePhoto from "../assets/profile2.jpeg";
 
@@ -7,7 +7,7 @@ const HeroSection = () => {
     <div id="about" className="flex flex-col items-center mt-6 lg:mt-20">
       {/* Foto de perfil y nombre */}
       <div className="flex flex-col items-center mb-8">
-        <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-500 mb-6">
+        <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-custom-primary mb-6">
           <img 
             src={profilePhoto} 
             alt="Foto de perfil" 
@@ -18,14 +18,14 @@ const HeroSection = () => {
           {personalInfo.name}
         </h1>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl text-center mt-4">
-          <span className="bg-gradient-to-r from-blue-500 to-blue-700 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-custom-primary to-custom-primary-dark text-transparent bg-clip-text">
             {personalInfo.title}
           </span>
         </h2>
       </div>
 
       {/* Resumen profesional */}
-      <p className="mt-6 text-lg text-center text-slate-400 max-w-4xl leading-relaxed">
+      <p className="mt-6 text-lg text-center text-white max-w-4xl leading-relaxed">
         {personalInfo.summary}
       </p>
 
@@ -33,19 +33,12 @@ const HeroSection = () => {
       <div className="flex flex-wrap justify-center gap-6 mt-8">
         <a 
           href={`mailto:${personalInfo.email}`}
-          className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors duration-200"
+          className="flex items-center gap-2 text-white hover:text-custom-primary transition-colors duration-200"
         >
           <Mail size={20} />
           <span>{personalInfo.email}</span>
         </a>
-        <a 
-          href={`tel:${personalInfo.phone}`}
-          className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors duration-200"
-        >
-          <Phone size={20} />
-          <span>{personalInfo.phone}</span>
-        </a>
-        <div className="flex items-center gap-2 text-slate-300">
+        <div className="flex items-center gap-2 text-white">
           <MapPin size={20} />
           <span>{personalInfo.location}</span>
         </div>
@@ -57,7 +50,7 @@ const HeroSection = () => {
           href={personalInfo.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors duration-200"
+          className="flex items-center gap-2 text-white hover:text-custom-primary transition-colors duration-200"
         >
           <Linkedin size={24} />
           <span>LinkedIn</span>
@@ -66,7 +59,7 @@ const HeroSection = () => {
           href={personalInfo.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors duration-200"
+          className="flex items-center gap-2 text-white hover:text-custom-primary transition-colors duration-200"
         >
           <Github size={24} />
           <span>GitHub</span>
@@ -75,7 +68,7 @@ const HeroSection = () => {
           href={personalInfo.portfolio}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors duration-200"
+          className="flex items-center gap-2 text-white hover:text-custom-primary transition-colors duration-200"
         >
           <ExternalLink size={24} />
           <span>Portfolio</span>
@@ -86,15 +79,9 @@ const HeroSection = () => {
       <div className="flex flex-col sm:flex-row justify-center gap-4 my-10">
         <a
           href="#contact"
-          className="bg-gradient-to-r from-blue-500 to-blue-700 py-3 px-6 rounded-md hover:from-blue-600 hover:to-blue-800 transition-all duration-200 text-center"
+          className="bg-gradient-to-r from-custom-primary to-custom-primary-dark py-3 px-6 rounded-md hover:from-custom-primary-light hover:to-custom-primary transition-all duration-200 text-center"
         >
           Contactar
-        </a>
-        <a 
-          href="#download" 
-          className="py-3 px-6 rounded-md border border-slate-600 hover:border-blue-400 transition-colors duration-200 text-center"
-        >
-          Descargar CV
         </a>
       </div>
 

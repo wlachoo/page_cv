@@ -19,7 +19,7 @@ const Testimonials = () => {
                 />
                 <div>
                   <h6>{testimonial.name}</h6>
-                  <span className="text-sm font-normal italic text-neutral-600">
+                  <span className="text-sm font-normal italic text-white">
                     {testimonial.company}
                   </span>
                 </div>

@@ -20,7 +20,11 @@ import {
   // Methodology icons
   Target,
   // Language icons
-  MessageCircle
+  MessageCircle,
+  // New category icons
+  Sparkles,
+  Plane,
+  Brain
 } from "lucide-react";
 
 // Función para obtener el icono correspondiente a cada tecnología
@@ -76,12 +80,9 @@ const getTechIcon = (tech) => {
 // Función para obtener el icono de la categoría
 const getCategoryIcon = (category) => {
   const categoryIcons = {
-    'Frontend': <Code className="w-6 h-6" />,
-    'Backend': <Server className="w-6 h-6" />,
-    'Bases de Datos': <Database className="w-6 h-6" />,
-    'Herramientas': <Wrench className="w-6 h-6" />,
-    'Metodologías': <Users className="w-6 h-6" />,
-    'Idiomas': <Globe className="w-6 h-6" />
+    'Transforma tu vida': <Sparkles className="w-6 h-6" />,
+    'Viaja conmigo': <Plane className="w-6 h-6" />,
+    'Expande tu mente': <Brain className="w-6 h-6" />
   };
   
   return categoryIcons[category] || <Code className="w-6 h-6" />;
@@ -91,27 +92,26 @@ const FeatureSection = () => {
   return (
     <div id="skills" className="relative mt-20 border-b border-slate-700 min-h-[800px]">
       <div className="text-center">
-        <span className="bg-slate-900 text-blue-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
-          Habilidades
+        <span className="bg-slate-900 text-custom-primary rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
+          Mis Proyectos
         </span>
         <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-20 tracking-wide">
-          Mis{" "}
-          <span className="bg-gradient-to-r from-blue-500 to-blue-700 text-transparent bg-clip-text">
-            Habilidades
+          <span className="bg-gradient-to-r from-custom-primary to-custom-primary-dark text-transparent bg-clip-text">
+            Mis Proyectos
           </span>
         </h2>
-        <p className="mt-6 text-lg text-slate-400 max-w-3xl mx-auto">
+        <p className="mt-6 text-lg text-white max-w-3xl mx-auto">
           Tecnologías y herramientas que domino para crear soluciones innovadoras
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
         {skills.map((skillCategory, index) => (
-          <div key={index} className="bg-slate-800/50 rounded-lg p-6 border border-slate-700 hover:border-blue-500 transition-colors duration-300">
+          <div key={index} className="bg-slate-800/50 rounded-lg p-6 border border-slate-700 hover:border-custom-primary transition-colors duration-300">
             <div className="flex items-center justify-center mb-4">
-              <div className="text-blue-400 mr-2">
+              <div className="text-custom-primary mr-2">
                 {getCategoryIcon(skillCategory.category)}
               </div>
-              <h3 className="text-xl font-semibold text-blue-400">
+              <h3 className="text-xl font-semibold text-custom-primary">
                 {skillCategory.category}
               </h3>
             </div>
@@ -119,7 +119,7 @@ const FeatureSection = () => {
               {skillCategory.technologies.map((tech, techIndex) => (
                 <span 
                   key={techIndex}
-                  className="bg-slate-700 text-slate-300 px-3 py-2 rounded-full text-sm hover:bg-blue-600 hover:text-white transition-colors duration-200 flex items-center gap-1"
+                  className="bg-slate-700 text-white px-3 py-2 rounded-full text-sm hover:bg-custom-primary hover:text-white transition-colors duration-200 flex items-center gap-1"
                 >
                   {getTechIcon(tech)}
                   {tech}
