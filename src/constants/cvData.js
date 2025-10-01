@@ -2,7 +2,7 @@
 export const personalInfo = {
   name: "Daviana Martinez",
   title: "Contadora",
-  email: "w.edgardo22@gmail.com",
+  email: "devian0559@gmail.com",
   location: "Porlamar, Nueva Esparta, Venezuela",
   linkedin: "https://linkedin.com/in/tu-perfil",
   github: "https:s//github.com/wlachoo",
